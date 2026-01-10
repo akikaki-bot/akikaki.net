@@ -1,65 +1,63 @@
-import Image from "next/image";
+import { LinkBox } from "@/components/linkBox"
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    return (
+        <main
+            className="flex note min-h-screen items-center justify-center bg-zinc-50 p-4 sm:p-8 lg:p-16 xl:p-32 2xl:p-64"
+            style={{
+                fontFamily: "var(--font-noto-sans-jp), var(--font-geist-sans)"
+            }}
+        >
+            <div className="grid lg:grid-cols-2 grid-cols-1 w-full h-full min-h-full items-center gap-8 p-8 sm:p-16 rounded-xl border border-stone-200 backdrop-blur-xs">
+                <div className="border border-zinc-100 bg-white w-full h-full p-4 sm:p-6 rounded-2xl shadow-2xs transform-gpu transition-all hover:scale-[1.005] hover:bg-zinc-50 hover:shadow-2xl">
+                    <div className="flex flex-col justify-between h-full w-full gap-16">
+                        <div className="flex flex-row justify-between h-full w-full">
+                            <div className="flex flex-col gap-4 justify-center">
+                                <div className="flex flex-row gap-2 items-baseline">
+                                    <h1 className="text-5xl font-semibold">禍</h1>
+                                    <p className="text-base font-light">ka</p>
+                                </div>
+                                <p className="text-base sm:text-xl font-light">Formally <span className="font-semibold">あきかき</span> (<span className="font-semibold mx-1.5">@akikaki-bot</span>)</p>
+                            </div>
+                        </div>
+                        <div className="flex flex-row gap-2 sm:gap-4 border border-zinc-200 shadow-2xs rounded-xl p-2 justify-center">
+                            <LinkBox href="https://x.com/__ka_akmn" imageURL="/icons/x.svg" alt="X" />
+                            <LinkBox href="https://github.com/akikaki-bot" imageURL="/icons/github.svg" alt="Github" />
+                            <LinkBox href="https://discord.com/users/536489930080256011" imageURL="/icons/discord.svg" alt="Discord" />
+                            <LinkBox href="https://blog.akikaki.net" imageURL="/icons/blog-icon.svg" alt="Blog URL" />
+                        </div>
+                    </div>
+                </div>
+                <div
+                    className="grid grid-rows-2 w-full h-full gap-8"
+                    style={{
+                        fontFamily: "var(--font-geist-sans)"
+                    }}
+                >
+                    <div className="border-2 border-amber-100 bg-white w-full h-full p-4 rounded-2xl shadow-2xs transform-gpu transition-all hover:scale-[1.005] hover:bg-zinc-50 hover:shadow-2xl">
+                        <div className="flex flex-col gap-4 w-full h-full">
+                            <h1 className="text-xl sm:text-2xl font-normal"><span className="mx-0.5">✨</span> My skills </h1>
+                            <div className="grid box-grid gap-2">
+                                <LinkBox href="#" imageURL="/icons/nodejs.svg" alt="Node.js" isNotLink={true} />
+                                <LinkBox href="#" imageURL="/icons/typescript.svg" alt="typescript" isNotLink={true} />
+                                <LinkBox href="#" imageURL="/icons/javascript.svg" alt="javascript" isNotLink={true} />
+                                <LinkBox href="#" imageURL="/icons/react.svg" alt="React" isNotLink={true} />
+                                <LinkBox href="#" imageURL="icons/next.svg" alt="Next.js" isNotLink={true} />
+                                <LinkBox href="#" imageURL="/icons/python.svg" alt="Python" isNotLink={true} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="border-2 border-yellow-100 bg-white w-full h-full p-4 rounded-2xl shadow-2xs transform-gpu transition-all hover:scale-[1.005] hover:bg-zinc-50 hover:shadow-2xl">
+                        <div className="flex flex-col gap-4 h-full w-full">
+                            <h1 className="text-xl sm:text-2xl font-normal"><span className="mx-0.5">📚</span> Learning Techs </h1>
+                            <div className="grid box-grid gap-2">
+                                <LinkBox href="#" imageURL="/icons/zig.svg" alt="Zig" isNotLink={true} />
+                                <LinkBox href="#" imageURL="/icons/java.svg" alt="Java" isNotLink={true} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
 }
